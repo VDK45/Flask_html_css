@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block name_1 %}
+    {{ super() }}
+{% endblock %}
+
+{% block name_2 %}
+    <h1>Передача перемены в html</h1>
+     {% if name %}
+        <h3>О группе: {{ name }}</h3>
+    {% else %}
+        <h3>Нет такой группы</h3>
+    {% endif %}
+    {{ super() }}
+{% endblock name_2 %}
+
