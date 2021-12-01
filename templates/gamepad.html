@@ -1,0 +1,16 @@
+{% extends 'gamepad_base.html' %}
+{% block title %}
+    {{  super() }}
+{% endblock title -%}
+{% block content %}
+    {{  super() }}
+    <h1 align = 'center'>Game pad </h1>
+    <p> Содержимое страницы Gamepad </p>
+
+    <p align = 'center'> Gamepad для игр VDK45
+    <br> Давайте играть со мой!
+    <br> Используя Gamepad </p>
+
+    <img src="{{url_for('static', filename='images/square.png')}}">
+
+{% endblock content %}

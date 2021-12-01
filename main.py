@@ -1,14 +1,16 @@
-from flask import Flask, render_template, url_for
+# from flask import Flask, render_template, url_for
+from flask import *
 
 app = Flask(__name__)
 
 menu = ['Установка', 'Первое приложение', 'Обратная связь']
 groups = ['45', 'vdk45', 'flask', 'vdk']
 
+
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html', title='Flask',  menu=menu)
+    return render_template('home.html', title='Flask', menu=menu)
 
 
 @app.route('/game')
@@ -50,6 +52,11 @@ def index(username, pin):
     return render_template('index.html', title='Index', menu=menu, username=username, pin=pin)
 
 
+@app.route('/gamepad')
+def gamepad():
+    return render_template('gamepad.html', title='gamepad', menu=menu)
+
+
 if __name__ == '__main__':
     # app.run(debug=True)
     app.run(host='0.0.0.0', port=5000, debug=True)
@@ -59,6 +66,3 @@ if __name__ == '__main__':
 #     print(url_for('game'))
 #     print(url_for('about'))
 #     print(url_for('index', username='user', pin=45))
-
-
-
