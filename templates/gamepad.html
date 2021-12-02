@@ -5,8 +5,8 @@
 {% endblock title -%}
 {% block content %}
     {{  super() }}
-    <h1 align = 'center'><i>Gamepad</i> <u><b>VDK</b></u><sup>45</sup> </h1>
-
+    <h1 align = 'center'><i>О Gamepad</i> <u><b>VDK</b></u><sup>45</sup> </h1>
+    <p align = 'center'> <b>Добро пожаловать!</b> </p>
     <pre align = 'center'>
 ─▄▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▄─
 █░░░█░░░░░░░░░░▄▄░██░█
@@ -14,15 +14,16 @@
 █░░░▀░░░▄▄▄▄▄░░██░▀▀░█
 ─▀▄▄▄▄▄▀─────▀▄▄▄▄▄▄▀─
     </pre>
-    <p align = 'center'> <b>Добро пожаловать!</b> </p>
 
     <p align = 'center'>  Gamepad для моих мини игр на <a href='https://www.twitch.tv/vdk45'>TWITCH</a>
     <br> Играть в мои мини игр во время стрима
-    <br> Используя Gamepad VDK45 или
-    <br><a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF'>VDK_controller.exe Для Windows 10 </a>
+    <br> Используя <a href='#gamepad_vdk45'>Gamepad VDK45</a> прямо тут в баузере или
+    <br>скачать: <a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF'>VDK_controller.exe Для Windows 10 </a>
+    <br>запустить и играть без установки.
     </p>
 
     <hr align = 'center' color='black' size=7 width='90%' Noshade>
+    <h2 id='gamepad_vdk45'><i>Gamepad</i> <u><b>VDK</b></u><sup>45</sup> </h2>
 
     <p>
     <img src="{{url_for('static', filename='images/square.png')}}" alt = 'image not found'
@@ -43,7 +44,7 @@
     title = 'Spaces-Button' heith = '100' width = '100' hspace = '180' vspace = '0'>
     </p>
 
-    <h2>Кнопки:</h2>
+    <h3>Кнопки:</h3>
     <ul type='square'>
         <li>Управление движения:
         <ul>
@@ -67,7 +68,7 @@
         </ul>
     </ul>
 
-    <h3>Управления через чат на TWITCH:</h3>
+    <h4>Управления через чат на TWITCH:</h4>
     <p><u>Работает не на всех играх</u></p>
     <ol>
         <li>UP = !up

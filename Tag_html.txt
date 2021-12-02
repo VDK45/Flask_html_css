@@ -139,6 +139,8 @@ Noshade
 <a href='https://www.twitch.tv/vdk45'>Мой TWITCH канал </a>
 Ссылка с картинки:
 <a href='https://www.twitch.tv/vdk45'><img src="{{url_for('static', filename='images/square.png')}}"></a>
+Открыть почту:
+<a href='mailto:vdk45blg@gmail.com'>Написать мне</a>
 
 Переход по пунктам:
 Задать имя пункта:
