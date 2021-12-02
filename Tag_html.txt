@@ -1,0 +1,161 @@
+Тег html
+<html>
+</html>
+
+Тег заголовки страницы
+<head>
+</head>
+
+Тег тела страницы
+<body>
+</body>
+
+Тег конца страницы
+<footer>
+</footer>
+
+Теги заголовки
+<h1> </h1>
+<h2> </h2>
+<h3> </h3>
+<h4> </h4>
+<h5> </h5>
+<h6> </h6>
+
+<h1 align = 'left'> По левому краю </h1>
+<h2 align = 'right'>  По правому краю </h2>	
+<h3 align = 'center'> По центу </h3>
+<h4 align = 'justify'> Поширине страницы </h4>	
+
+Теги абзаца
+
+<p> </p>
+
+<p align = 'left'> По левому краю  </p>
+<p align = 'right'>  По правому краю </p>
+<p align = 'center'> По центу </p>
+<p align = 'justify'> Поширине страницы </p>
+
+Тег: новая строка
+
+<br>
+
+Тег: Картинки
+
+<img>
+src = 'URL' Место хранения
+align = 'bottom'
+align = 'left'
+align = 'right'
+align = 'middle'
+align = 'top'
+alt = 'Текст' Когда ошибка изображения
+title = 'Текст' Когда наводишь на картину
+border = 'Тольщина рамки' 0 = нет рамки
+heith = 'Высота'
+width = 'Ширина'
+hspace = 'Отступ по горизонтали'
+vspace = 'Отступ по вертикали '
+
+Тег: Для текстов
+
+<b> </b>  Выделение фрагмента жирным
+<u> </u>  Подчеркивание фрагмента
+<i> </i>  Выделение фрагмента курсивом
+
+<sup> </sup> Сдвиг текста вверх (Степень)
+<sub> </sub> Сдвиг текста вниз (Индекс)
+
+Тег: линия
+
+<hr></hr>
+align='center'
+align='left'
+align='right'
+color='blue'
+size=5
+widht='50%'
+widht='500'  pixel
+Noshade
+
+Маркированный тег
+
+<ul>
+	<li><u>Button</u> UP
+	<li><u>Button</u> DOWN
+	<li><u>Button</u> LEFT
+	<li><u>Button</u> RIGHT
+	<li><u>Button</u> Spaces
+	<li><u>Button</u> B
+	<li><u>Button</u> P
+	<li><u>Button</u> N
+</ul>
+
+<ul type='disk'> = Закращеная о
+<ul type='circle'> = o
+<ul type='square'> = квадрат
+
+Тег: Номерованный список 
+<ol>
+	<li>UP = !up
+	<li>DOWN = !down
+	<li>LEFT = !left
+	<li>RIGHT = !right
+</ol>
+
+<ol>
+	<li><p> 1 Первый абзац
+	<p>1 Второй абзац
+	<li><p> 2 Первый абзац
+	<p>2 Второй абзац
+	<li><p> 3 Первый абзац
+	<p>3 Второй абзац
+	<li><p> 4 Первый абзац
+	<p>4 Второй абзац
+</ol>
+
+<ol type=A> = A B C D
+<ol type=a> = a b c d
+<ol type=|> = Римские большие
+<ol type=i> = Римские маленькие
+<ol type=1> = 1 2 3 4 по умольчанию
+
+<ol start=5> = Начинается с 5
+
+Тег ВСЕ:
+
+<pre></pre>
+
+Спец символы:
+
+&copy; = @Все права защищены!
+&lt; = <
+&gt; = >
+&nbsp; = пробел
+&amp; = &
+&quot; = "
+
+Текстовая ссылка:
+<a href='https://www.twitch.tv/vdk45'>Мой TWITCH канал </a>
+Ссылка с картинки:
+<a href='https://www.twitch.tv/vdk45'><img src="{{url_for('static', filename='images/square.png')}}"></a>
+
+Переход по пунктам:
+Задать имя пункта:
+<h1 id='also'>Заголовок 1 </h1>
+Переход к пункту (Заголовок 1):
+<a href='#also'>Перети к заголовку 1</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

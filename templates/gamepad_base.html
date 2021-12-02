@@ -8,7 +8,7 @@
 
     {% block title -%}
     {% if title %}
-        <title>О сайте - {{ title }} </title>
+        <title>{{ title }} VDK45</title>
     {% else %}
         <title>VDK45 gamepad</title>
     {% endif %}
@@ -19,13 +19,13 @@
     {% block content -%}
         {% block mainmenu -%}
     <u1>
-        {% for m in menu %}
-            <li>
-            {{ m }}
-            </li>
-        {% endfor %}
+        <li><a href='https://www.twitch.tv/vdk45'>Мой TWITCH канал </a>
+        <li><a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF'>Gamepad.exe Для Windows 10 </a>
+        <li><a href='mailto:vdk45blg@gmail.com'>Обратная связь</a>
     </u1>
         {% endblock mainmenu -%}
     {% endblock content %}
+    <hr align = 'center' color='black' size=7 width='90%' Noshade>
+    <p> &copy;Все права защищены!
 </body>
 </html>

@@ -3,7 +3,7 @@ from flask import *
 
 app = Flask(__name__)
 
-menu = ['Установка', 'Первое приложение', 'Обратная связь']
+menu = ['Мой TWITCH канал', 'Gamepad.exe Для Windows 10', 'Обратная связь']
 groups = ['45', 'vdk45', 'flask', 'vdk']
 
 
@@ -54,7 +54,7 @@ def index(username, pin):
 
 @app.route('/gamepad')
 def gamepad():
-    return render_template('gamepad.html', title='gamepad', menu=menu)
+    return render_template('gamepad.html', title='Gamepad', menu=menu)
 
 
 if __name__ == '__main__':

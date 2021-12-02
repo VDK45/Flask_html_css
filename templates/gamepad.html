@@ -1,15 +1,28 @@
 {% extends 'gamepad_base.html' %}
 {% block title %}
     {{  super() }}
+    <li><a href='/home'>О проекте</a>
 {% endblock title -%}
 {% block content %}
     {{  super() }}
-    <h1 align = 'center'>Game pad </h1>
-    <p> Содержимое страницы Gamepad </p>
+    <h1 align = 'center'><i>Gamepad</i> <u><b>VDK</b></u><sup>45</sup> </h1>
 
-    <p align = 'center'> Gamepad для игр VDK45
-    <br> Давайте играть со мой!
-    <br> Используя Gamepad </p>
+    <pre align = 'center'>
+─▄▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▄─
+█░░░█░░░░░░░░░░▄▄░██░█
+█░▀▀█▀▀░▄▀░▄▀░░▀▀░▄▄░█
+█░░░▀░░░▄▄▄▄▄░░██░▀▀░█
+─▀▄▄▄▄▄▀─────▀▄▄▄▄▄▄▀─
+    </pre>
+    <p align = 'center'> <b>Добро пожаловать!</b> </p>
+
+    <p align = 'center'>  Gamepad для моих мини игр на <a href='https://www.twitch.tv/vdk45'>TWITCH</a>
+    <br> Играть в мои мини игр во время стрима
+    <br> Используя Gamepad VDK45 или
+    <br><a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF'>VDK_controller.exe Для Windows 10 </a>
+    </p>
+
+    <hr align = 'center' color='black' size=7 width='90%' Noshade>
 
     <p>
     <img src="{{url_for('static', filename='images/square.png')}}" alt = 'image not found'
@@ -29,4 +42,54 @@
     <img src="{{url_for('static', filename='images/circle_button.png')}}" alt = 'image not found'
     title = 'Spaces-Button' heith = '100' width = '100' hspace = '180' vspace = '0'>
     </p>
+
+    <h2>Кнопки:</h2>
+    <ul type='square'>
+        <li>Управление движения:
+        <ul>
+        <li><u>Button</u> W = UP
+        <li><u>Button</u> S = DOWN
+        <li><u>Button</u> A = LEFT
+        <li><u>Button</u> D = RIGHT
+        </ul>
+    </ul>
+    <ul type='circle' >
+        <li>Управление действии:
+        <ul>
+        <li><u><sup>Button</sup></u > <img src="{{url_for('static', filename='images/circle_button.png')}}" alt = 'image not found'
+            title = 'Spaces-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = SPACES</sup>
+        <li><u><sup>Button</sup></u> <img src="{{url_for('static', filename='images/сircle.png')}}" alt = 'image not found'
+            title = 'B-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = B</sup>
+        <li><u><sup>Button</sup></u> <img src="{{url_for('static', filename='images/triagle.png')}}" alt = 'image not found'
+            title = 'N-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = P</sup>
+        <li><u><sup>Button</sup></u> <img src="{{url_for('static', filename='images/сircle.png')}}" alt = 'image not found'
+            title = 'B-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = N</sup>
+        </ul>
+    </ul>
+
+    <h3>Управления через чат на TWITCH:</h3>
+    <p><u>Работает не на всех играх</u></p>
+    <ol>
+        <li>UP = !up
+        <li>DOWN = !down
+        <li>LEFT = !left
+        <li>RIGHT = !right
+    </ol>
+    <ol start=5>
+        <li><u><sup>Button</sup></u > <img src="{{url_for('static', filename='images/circle_button.png')}}" alt = 'image not found'
+            title = 'Spaces-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = !spaces</sup>
+        <li><u><sup>Button</sup></u> <img src="{{url_for('static', filename='images/сircle.png')}}" alt = 'image not found'
+            title = 'B-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = !b</sup>
+        <li><u><sup>Button</sup></u> <img src="{{url_for('static', filename='images/triagle.png')}}" alt = 'image not found'
+            title = 'N-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = !p</sup>
+        <li><u><sup>Button</sup></u> <img src="{{url_for('static', filename='images/сircle.png')}}" alt = 'image not found'
+            title = 'B-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = !n</sup>
+    </ol>
+    <pre>
+    ─▄▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▄─
+    █░░░█░░░░░░░░░░▄▄░██░█
+    █░▀▀█▀▀░▄▀░▄▀░░▀▀░▄▄░█
+    █░░░▀░░░▄▄▄▄▄░░██░▀▀░█
+    ─▀▄▄▄▄▄▀─────▀▄▄▄▄▄▄▀─
+    </pre>
 {% endblock content %}
