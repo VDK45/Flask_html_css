@@ -25,15 +25,15 @@
 
 
     <div id="reg_form">                                 <!-- id уникальный идентификатор для css -->
-    <h2>Го к нам!</h2>
+    <h2><i>Go к нам!</i></h2>
      <form action='register.php' method='post'>
      <input type='hidden' name='id' value='123456'>
 
-     <table border=5 >
+     <table> <!-- <table  border=5> Рамка = 5px -->
 
-      <tr><td>Ваш любимый класс: </td>                      <!-- tr новая линия -->
-        <td>
-        <select name='class'>
+      <tr ><td>Ваш любимый класс: </td>                      <!-- tr новая линия -->
+        <td >
+        <select name='class' class = "css_select">
         <option value= '1'>Скаут</option>
         <option value= '2'>Солдат</option>
         <option value= '3'>Пиро</option>
@@ -46,10 +46,10 @@
         </select>
         </td>
      </tr>
-     <tr><td>Ваш ник: </td>
-         <td><input type='text' name='fio' value=''></td></tr>
-     <tr><td>Пароль: </td>
-        <td><input type='password' name='pass' value=''></td></tr>
+     <tr><td class = "css_form" >Ваш ник: </td>
+         <td ><input class = "css_input" type='text' name='fio' value=''></td></tr>
+     <tr><td class = "css_form" >Пароль: </td>
+        <td ><input class = "css_input"  type='password' name='pass' value=''></td></tr>
 
      <tr><td colspan='2'>
         <textarea cols=40 rows=5 name='text' maxlength=150> Немного о себе:
@@ -61,10 +61,10 @@
          <input type='radio' name='sex' value='2'> Ж </td>
      </tr>
 
-     <tr><td colspan='2'>  <!-- colspan='2' занимает 2 столбца -->
-        <p><input type='checkbox' name='agree'> Регистрируясь, вы принимаете пользовательское соглашение</p>
+     <tr><td colspan='2' class = "css_agree">  <!-- colspan='2' занимает 2 столбца -->
+        <p><input  type='checkbox' name='agree'> Регистрируясь, вы принимаете пользовательское соглашение</p>
      </td></tr>
-     <tr><td><input type='submit' value='Зарегиться'></td><td><input type='reset' value='Отчистить форму'></td></tr>
+     <tr><td><input class="css_button" type='submit' value='Зарегиться'></td><td><input class="css_button" type='reset' value='Отчистить форму'></td></tr>
 
      </table>
      </form>

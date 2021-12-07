@@ -15,7 +15,7 @@ h2{
 	border-bottom: 5px solid #ccc;  /* Нижняя линия рамки */
 }
 
-#reg_form {
+#reg_form {              /* # к определеному id из hthm  */
 	width: 500px;
 	margin: 20px auto 20px auto;  /* Отступы блока от всех сторон верх-право-низ-лево */
 	padding: 30px;  /* Рамка вокруг содержимого блока */
@@ -38,13 +38,68 @@ ul.reg_list b {   /* к тегу ul class reg_list теги <b> из hthm  */
 	padding: 2px;
 }
 
-textarea {
+textarea {          /* к тегу textarea  */
 	color: #096407;
 	min-width: 480px;
 	max-width: 480px;
 	max-height: 230px;
 	
 }
+
+textarea:focus {          /* к тегу textarea  */
+	color: #096407;
+	min-width: 480px;
+	max-width: 480px;
+	max-height: 230px;
+	background:  #FFF9B5;
+}
+
+
+.css_form {          /* Нужно поменять на  css_form */
+	display: inline-block;  /* inline-block Блок как линия  */
+	min-width: 100px
+}
+
+.css_input {   /* Нужно поменять на  css_input */
+	width: 230px;
+	border: none;  /* border: none;  */
+	border-bottom: 2px solid #aaa;  /* Подчеркнуть  */
+	font-size: 16px;
+}
+
+.css_input:focus {     /* Когда в фокусе  */ /* Нужно поменять на  css_input */
+	border-bottom: 2px solid #FFDB4D;  /* Подчеркнуть другим цветом */
+	background:  #FFF9B5;
+}
+
+.css_select {
+	width: 230;
+	font-size: 14px;
+}
+
+.css_select:focus {
+	width: 230;
+	font-size: 14px;
+	background: #FFF9B5;
+}
+
+.css_agree {
+	font-size: 12px;
+}
+
+.css_button {
+	background: #FFDB4D;
+	font-size: 16px;
+	color: 333;
+	padding: 4px;
+	border: 5px solid #FFCF11;
+	border-radius: 13px;     /* Округление */
+}
+
+
+
+
+
 
 
 
