@@ -148,9 +148,89 @@ Noshade
 Переход к пункту (Заголовок 1):
 <a href='#also'>Перети к заголовку 1</a>
 
+-------------
+Таблица:
 
+------------------------------
+|      1       |       2      |
+------------------------------
+|      3       |       4      |
+------------------------------
+|      5       |       6      |
+------------------------------
 
+<table border=5>
+	<tr><td>Ячейка_1</td><td>Ячейка_2</td></tr>
+	<tr><td>Ячейка_3</td><td>Ячейка_4</td></tr>
+	<tr><td>Ячейка_5</td><td>Ячейка_6</td></tr>
+</table>
 
+<table bgcolor='#RRGGBB'>  шестнадцатеричный цвет заднего фонна таблицы
+
+<table>  Таблица слева Нет обтекания
+<table align='left'>  Обтекание справа
+<table align='right'>  Обтекание слева
+<table align='center'> Нет обтекания
+
+<table background='URL'>
+<table border=0> Рамка таблицы
+
+<table cellspadding='Число'> 
+<table cellspacing='Число'>
+
+<table width='ширина'> В процентах или в пикселах
+
+Атрибуты <tr> и <td>
+
+valign='top'
+valign='middle'
+valign='bottom'
+
+align='left'
+align='right'
+align='center'
+background='URL'
+bgcolor='#RRGGBB'
+width='ширина'
+
+Сложная таблица:
+
+colspan и rowspan
+
+---------------------------------
+|    1     |           2         |
+---------------------------------
+|          |    4     |    5     |
+-    3     -----------------------
+|          |    6     |    7     |
+----------------------------------
+
+<table border=5>
+	<tr>
+		<td>Ячейка_1</td>
+		<td colspan=2>Ячейка_2</td>
+	</tr>
+	<tr>
+		<td rowspan=2>Ячейка_3</td>
+		<td>Ячейка_4</td>
+		<td>Ячейка_5</td>
+	</tr>
+	<tr>
+		<td>Ячейка_6</td>
+		<td>Ячейка_7</td>
+	</tr>
+</table>
+
+------- Frame -----------
+
+<frameset cols='20%, *'>
+	<frame name='menu' src='menu.html'>
+	<frame name='main' src='main.html'>
+</frameset>
+
+-------- Iframe ---------
+
+<iframe></iframe>
 
 
 

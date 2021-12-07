@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="ru">
 <head>
+    <meta charset=utf-8>
+    <link type="text/css" href="{{url_for('static', filename='css/style.css')}}" rel=stylesheet>
+    <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+<script>
+   // init environment
+  languagePluginLoader
+    // then run Python code
+    .then(() => console.log(pyodide.runPython(`import sys; sys.version`)));
+</script>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -13,14 +22,14 @@
         <title>VDK45 gamepad</title>
     {% endif %}
     {% endblock %}
-
 </head>
 <body>
     {% block content -%}
+    <script> src="{{url_for('static', filename='game.py')}}" </script>
         {% block mainmenu -%}
     <u1>
-        <li><a href='https://www.twitch.tv/vdk45'>Мой TWITCH канал </a>
-        <li><a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF'>Gamepad.exe Для Windows 10 </a>
+        <li><a href='https://www.twitch.tv/vdk45' target='_blank'>Мой TWITCH канал </a>
+        <li><a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF' target='_blank'>Gamepad.exe Для Windows 10 </a>
         <li><a href='mailto:vdk45blg@gmail.com'>Обратная связь</a>
     </u1>
         {% endblock mainmenu -%}

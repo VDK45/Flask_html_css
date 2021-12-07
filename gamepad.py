@@ -21,12 +21,13 @@ def gamepad():
     return render_template('gamepad.html', title='Gamepad')
 
 
+@app.route('/register.php')
+def register():
+    return render_template('register.php', title='Registered')
+
+
 if __name__ == '__main__':
     # app.run(debug=True)
     app.run(host='0.0.0.0', port=5000, debug=True)
 
-# with app.test_request_context():
-#     print(url_for('home'))
-#     print(url_for('game'))
-#     print(url_for('about'))
-#     print(url_for('index', username='user', pin=45))
+

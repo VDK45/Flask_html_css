@@ -3,18 +3,70 @@
     {{  super() }}
 {% endblock title -%}
 {% block content %}
-    <li><a href='/gamepad'>Go to Gamepad VDK45</a>
+    <li><a href='/gamepad#gamepad_vdk45'>Go to Gamepad VDK45</a>
     {{  super() }}
-     <h1 align = 'center'><i>О проекте:</i> <u><b>Gamepad VDK</b></u><sup>45</sup> </h1>
-     <li align = 'center'><a href='https://www.twitch.tv/vdk45'>Мой TWITCH канал </a>
-     <li align = 'center'><a href='https://discord.gg/y9V4Xfn'>Мой DISCORD канал </a>
-     <li align = 'center'><a href='https://steamcommunity.com/id/vdk45'>Мой STEAM профиль </a>
+     <h1 style='color:red' align = 'center'><i>О проекте:</i> <u><b>Gamepad VDK</b></u><sup>45</sup> </h1>
+     <li align = 'center'><a href='https://www.twitch.tv/vdk45' target='_blank'>Мой TWITCH канал </a>
+     <li align = 'center'><a href='https://discord.gg/y9V4Xfn' target='_blank'>Мой DISCORD канал </a>
+     <li align = 'center'><a href='https://steamcommunity.com/id/vdk45' target='_blank'>Мой STEAM профиль </a>
      <li align = 'center'><a href='mailto:vdk45blg@gmail.com'>Написать мне</a>
+
+     <ul class = "reg_list">                                                     <!-- class идентификатор для css -->
      <p>Хочу создать игры для стрима и чтобы зрители играли прямо из браузера.
-     <br>Даже не знаю получится или нет но получилось <a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF'>VDK_controller.exe Для Windows 10 </a>
+     <br>Даже не знаю получится или нет но получилось <a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF' target='_blank'>VDK_controller.exe Для Windows 10 </a>
      <br>Пока мало опыта но есть желание. Буду рад любой помощи!
-     <br>Владею <b>PYTHON</b> <b>MYSQL</b>.
+     <br>Владею <b>PYTHON, </b> <b>MYSQL</b>.
      <br>Учусь <b>HTML</b> и <b>CSS</b>.
      <br>Хочу научиться на <b>Андройд </b> разрабочика!
      </p>
+    </ul>
+
+
+
+
+    <div id="reg_form">                                 <!-- id уникальный идентификатор для css -->
+    <h2>Го к нам!</h2>
+     <form action='register.php' method='post'>
+     <input type='hidden' name='id' value='123456'>
+
+     <table border=5 >
+
+      <tr><td>Ваш любимый класс: </td>                      <!-- tr новая линия -->
+        <td>
+        <select name='class'>
+        <option value= '1'>Скаут</option>
+        <option value= '2'>Солдат</option>
+        <option value= '3'>Пиро</option>
+        <option value= '4'>Подрывник</option>
+        <option value= '5'>Пулеметчик</option>
+        <option value= '6'>Инженер</option>
+        <option value= '7'>Медик</option>
+        <option value= '8'>Снайпер</option>
+        <option value= '9'>Шпион</option>
+        </select>
+        </td>
+     </tr>
+     <tr><td>Ваш ник: </td>
+         <td><input type='text' name='fio' value=''></td></tr>
+     <tr><td>Пароль: </td>
+        <td><input type='password' name='pass' value=''></td></tr>
+
+     <tr><td colspan='2'>
+        <textarea cols=40 rows=5 name='text' maxlength=150> Немного о себе:
+        </textarea>
+     </td></tr>
+
+     <tr><td>Пол: </td>
+         <td><input type='radio' name='sex' value='1' checked> М
+         <input type='radio' name='sex' value='2'> Ж </td>
+     </tr>
+
+     <tr><td colspan='2'>  <!-- colspan='2' занимает 2 столбца -->
+        <p><input type='checkbox' name='agree'> Регистрируясь, вы принимаете пользовательское соглашение</p>
+     </td></tr>
+     <tr><td><input type='submit' value='Зарегиться'></td><td><input type='reset' value='Отчистить форму'></td></tr>
+
+     </table>
+     </form>
+     </div>
 {% endblock content %}
