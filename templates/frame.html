@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link type="text/css" href="{{url_for('static', filename='css/style.css')}}" rel=stylesheet>
+  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+  <title>Frame</title>
+</head>
+
+<frameset rows="17%, 40%, *">
+    <frame name="menu" src="{{url_for('gamepad', filename='gamepad.html')}}" >
+    <frame name="menu" src="{{url_for('home', filename='gamepad_home.html')}}" >
+    <frameset cols="27%, *">
+    <frame name="menu" src="{{url_for('gamepad', filename='gamepad.html')}}" >
+    <frame name="menu" src="{{url_for('home', filename='gamepad_home.html')}}" >
+    </frameset>
+</frameset>
+
+</html>

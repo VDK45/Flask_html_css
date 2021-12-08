@@ -1,13 +1,42 @@
+/* Уровень Вложености <style> p > b {font-style: 24px;} </style>  
+    <p><b> font-style==24px </b></p> 
+    <p><span><b> Не работает </b></span></p> */ 
+	
+/* Нет Вложености <style> p b {font-style: 24px;} </style>  
+    <p><b> font-style==24px </b></p> 
+    <p><span><div><b> font-style==24px </b></span></div></p> */ 
+
 html, body {
 	margin: 10px;  /* Расстояние между блоками */
-	padding: 10px;  /* Расстояние между содержимом блока и его граница */
+	padding: 5px;  /* Расстояние между содержимом блока и его граница */
 	font-family: Arial, Tahoma;  /* Шрифты если нет первого */
 	color: #444  /* цвет */
-	
 }
 
+ul.ccs_main_menu {
+	list-style: none;
+	padding: 10px;
+	margin: 10px ;              /* Растояние между блоками */
+	background: #EDEEF0;
+	color: #285473;
+	width: 250px;
+	border-radius: 13px;     /* Округление */
+	box-shadow: 5px 5px 20px #aaa;  /* Тень рамки */
+}
+
+.css_menu_item {
+	padding: 3px;
+	margin: 10px 0 0 0;
+}
+
+.css_menu_item.selected {
+	background: #C7D5EB;
+	border-radius: 7px; 
+}
+
+
+
 h2{	
-	
 	font-size: 40px;  /* Размер шрифта */
 	color: blue;
 	margin: 5px 0 35px 0;  /* Отступы блока от всех сторон верх-право-низ-лево */
@@ -18,11 +47,11 @@ h2{
 #reg_form {              /* # к определеному id из hthm  */
 	width: 500px;
 	margin: 20px auto 20px auto;  /* Отступы блока от всех сторон верх-право-низ-лево */
-	padding: 30px;  /* Рамка вокруг содержимого блока */
+	padding: 20px;  /* Рамка вокруг содержимого блока */
 	background: #fff;
 	box-shadow: 5px 5px 20px #aaa;  /* Тень рамки */
 	border-bottom: 3px solid #ccc;  /* Нижняя линия рамки */
-	
+	border-radius: 13px;     /* Округление */
 }
 
 ul.reg_list {   /* к тегу ul class reg_list из hthm  */
@@ -30,6 +59,7 @@ ul.reg_list {   /* к тегу ul class reg_list из hthm  */
 	list-style: none;
 	padding: 0px;
 	margin: 20px;
+	
 }
 
 ul.reg_list b {   /* к тегу ul class reg_list теги <b> из hthm  */
@@ -43,7 +73,8 @@ textarea {          /* к тегу textarea  */
 	min-width: 480px;
 	max-width: 480px;
 	max-height: 230px;
-	
+	border-radius: 13px;     /* Округление */
+	margin: 20px auto 10px auto;
 }
 
 textarea:focus {          /* к тегу textarea  */
@@ -52,6 +83,8 @@ textarea:focus {          /* к тегу textarea  */
 	max-width: 480px;
 	max-height: 230px;
 	background:  #FFF9B5;
+	border-radius: 13px;     /* Округление */
+	margin: 20px auto 10px auto;
 }
 
 
@@ -75,16 +108,30 @@ textarea:focus {          /* к тегу textarea  */
 .css_select {
 	width: 230;
 	font-size: 14px;
+	border-radius: 3px;     /* Округление */
 }
 
 .css_select:focus {
 	width: 230;
 	font-size: 14px;
 	background: #FFF9B5;
+	border-radius: 3px;     /* Округление */
+}
+
+.css_sex {
+	padding-bottom: 14px;  /* Отступы снизу */
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .css_agree {
-	font-size: 12px;
+	font-size: 14px;
+	background: #FFF9B5;
+	border-radius: 13px;   
+}
+
+.css_about {
+	border-radius: 13px;     /* Округление */
 }
 
 .css_button {
@@ -94,6 +141,7 @@ textarea:focus {          /* к тегу textarea  */
 	padding: 4px;
 	border: 5px solid #FFCF11;
 	border-radius: 13px;     /* Округление */
+	margin: 15px auto 0px auto;
 }
 
 

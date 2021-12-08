@@ -3,15 +3,31 @@
     {{  super() }}
 {% endblock title -%}
 {% block content %}
-    <li><a href='/gamepad#gamepad_vdk45'>Go to Gamepad VDK45</a>
-    {{  super() }}
-     <h1 style='color:red' align = 'center'><i>О проекте:</i> <u><b>Gamepad VDK</b></u><sup>45</sup> </h1>
-     <li align = 'center'><a href='https://www.twitch.tv/vdk45' target='_blank'>Мой TWITCH канал </a>
-     <li align = 'center'><a href='https://discord.gg/y9V4Xfn' target='_blank'>Мой DISCORD канал </a>
-     <li align = 'center'><a href='https://steamcommunity.com/id/vdk45' target='_blank'>Мой STEAM профиль </a>
-     <li align = 'center'><a href='mailto:vdk45blg@gmail.com'>Написать мне</a>
 
-     <ul class = "reg_list">                                                     <!-- class идентификатор для css -->
+    <ul class="ccs_main_menu"  align="center">
+    <li><a href='/gamepad#gamepad_vdk45'>Go to Gamepad VDK45</a>
+    </ul>
+    {{  super() }}
+
+    <!-- :first-letter Первая буква -->
+    <!-- :first-line Первая строка  -->
+    <!-- :before Стиль перед элементом -->
+    <!-- :after Стиль после элемента -->
+
+    <style>
+    h1:first-letter {color:red;}
+    </style>
+     <h1 align = 'center'><i>О проекте:</i> <u><b>Gamepad VDK</b></u><sup>45</sup> </h1>
+
+     <li align = 'center' class="css_link" ><a href='https://www.twitch.tv/vdk45' target='_blank'>Мой TWITCH канал </a>
+     <li align = 'center' class="css_link" ><a href='https://discord.gg/y9V4Xfn' target='_blank'>Мой DISCORD канал </a>
+     <li align = 'center' class="css_link" ><a href='https://steamcommunity.com/id/vdk45' target='_blank'>Мой STEAM профиль </a>
+     <li align = 'center' class="css_link" ><a href='mailto:vdk45blg@gmail.com'>Написать мне</a>
+
+     <ul class = "reg_list">    <!-- class идентификатор для css -->
+     <style>
+        p:first-line {text-decoration: underline;}    <!-- Первая линия подчёркнутая -->
+     </style>
      <p>Хочу создать игры для стрима и чтобы зрители играли прямо из браузера.
      <br>Даже не знаю получится или нет но получилось <a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF' target='_blank'>VDK_controller.exe Для Windows 10 </a>
      <br>Пока мало опыта но есть желание. Буду рад любой помощи!
@@ -20,19 +36,22 @@
      <br>Хочу научиться на <b>Андройд </b> разрабочика!
      </p>
     </ul>
+    <!-- Пример:
+    <style>
+        h2:before {content: '('; color: gray; font-size: 50px;}
+        h2:after {content: ')'; color: gray; font-size: 50px;}
+    </style>
+    -->
 
-
-
-
-    <div id="reg_form">                                 <!-- id уникальный идентификатор для css -->
+    <div id="reg_form" >                                 <!-- id уникальный идентификатор для css -->
     <h2><i>Go к нам!</i></h2>
      <form action='register.php' method='post'>
      <input type='hidden' name='id' value='123456'>
 
-     <table> <!-- <table  border=5> Рамка = 5px -->
+     <table>                                             <!-- <table  border=5> Рамка = 5px -->
 
-      <tr ><td>Ваш любимый класс: </td>                      <!-- tr новая линия -->
-        <td >
+      <tr><td>Ваш любимый класс: </td>                      <!-- tr новая линия -->
+        <td>
         <select name='class' class = "css_select">
         <option value= '1'>Скаут</option>
         <option value= '2'>Солдат</option>
@@ -56,9 +75,9 @@
         </textarea>
      </td></tr>
 
-     <tr><td>Пол: </td>
-         <td><input type='radio' name='sex' value='1' checked> М
-         <input type='radio' name='sex' value='2'> Ж </td>
+     <tr><td class="css_sex">Пол: </td>
+         <td class="css_sex"><input  type='radio' name='sex' value='1' checked> Муж
+         <input type='radio' name='sex' value='2'>  Жен </td>
      </tr>
 
      <tr><td colspan='2' class = "css_agree">  <!-- colspan='2' занимает 2 столбца -->

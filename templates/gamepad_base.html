@@ -27,11 +27,21 @@
     {% block content -%}
     <script> src="{{url_for('static', filename='game.py')}}" </script>
         {% block mainmenu -%}
-    <u1>
-        <li><a href='https://www.twitch.tv/vdk45' target='_blank'>Мой TWITCH канал </a>
-        <li><a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF' target='_blank'>Gamepad.exe Для Windows 10 </a>
-        <li><a href='mailto:vdk45blg@gmail.com'>Обратная связь</a>
-    </u1>
+    <!-- Стили псевдо-классов -->
+    <style>
+        a {text-decoration: none;}
+        a:link {color:green;}
+        a:visited {color:black;}
+        a:active {color:red;}
+        a:hover {text-decoration: underline;}
+        a:hover {background: #C7D5EB;}
+    </style>
+
+    <ul class="ccs_main_menu" align="center">
+        <li class="css_menu_item " ><a href='https://www.twitch.tv/vdk45' target='_blank'>Мой TWITCH канал </a>
+        <li class="css_menu_item" ><a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF' target='_blank'>Gamepad.exe Для Windows 10 </a>
+        <li class="css_menu_item selected"  ><a href='mailto:vdk45blg@gmail.com'>Обратная связь</a>
+    </ul>
         {% endblock mainmenu -%}
     {% endblock content %}
     <hr align = 'center' color='black' size=7 width='90%' Noshade>

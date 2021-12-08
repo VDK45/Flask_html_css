@@ -21,6 +21,11 @@ def gamepad():
     return render_template('gamepad.html', title='Gamepad')
 
 
+@app.route('/frame')
+def frame():
+    return render_template('frame.html', title='frame')
+
+
 @app.route('/register.php')
 def register():
     return render_template('register.php', title='Registered')
