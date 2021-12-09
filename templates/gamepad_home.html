@@ -3,7 +3,7 @@
     {{  super() }}
 {% endblock title -%}
 {% block content %}
-
+<div class="page" >
     <ul class="ccs_main_menu"  align="center">
     <li><a href='/gamepad#gamepad_vdk45'>Go to Gamepad VDK45</a>
     </ul>
@@ -13,10 +13,11 @@
     <!-- :first-line Первая строка  -->
     <!-- :before Стиль перед элементом -->
     <!-- :after Стиль после элемента -->
-
+</div>
     <style>
     h1:first-letter {color:red;}
     </style>
+    <div class="wrapper" >
      <h1 align = 'center'><i>О проекте:</i> <u><b>Gamepad VDK</b></u><sup>45</sup> </h1>
 
      <li align = 'center' class="css_link" ><a href='https://www.twitch.tv/vdk45' target='_blank'>Мой TWITCH канал </a>
@@ -45,7 +46,7 @@
 
     <div id="reg_form" >                                 <!-- id уникальный идентификатор для css -->
     <h2><i>Go к нам!</i></h2>
-     <form action='register.php' method='post'>
+     <form action='register' method='post'>
      <input type='hidden' name='id' value='123456'>
 
      <table>                                             <!-- <table  border=5> Рамка = 5px -->
@@ -88,4 +89,6 @@
      </table>
      </form>
      </div>
+     </div>
+
 {% endblock content %}

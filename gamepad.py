@@ -1,4 +1,4 @@
-# from flask import Flask, render_template, url_for
+# from flask import Flask, render_template, url_for, request
 from flask import *
 
 app = Flask(__name__)
@@ -26,9 +26,11 @@ def frame():
     return render_template('frame.html', title='frame')
 
 
-@app.route('/register.php')
+@app.route('/register', methods=["POST", "GET"])
 def register():
-    return render_template('register.php', title='Registered')
+    if request.method == "POST":
+        print(request.form)
+    return render_template('gamepad_home.html', title='Registered')
 
 
 if __name__ == '__main__':

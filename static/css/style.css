@@ -5,12 +5,45 @@
 /* Нет Вложености <style> p b {font-style: 24px;} </style>  
     <p><b> font-style==24px </b></p> 
     <p><span><div><b> font-style==24px </b></span></div></p> */ 
+/*
+* {
+	background: #fff url(https://walpix.net/image.php?id=12511&width=1920&height=1080&crop=crop) no-repeat center; 
+}
+*/
 
 html, body {
+	height: 100%;
 	margin: 10px;  /* Расстояние между блоками */
 	padding: 5px;  /* Расстояние между содержимом блока и его граница */
 	font-family: Arial, Tahoma;  /* Шрифты если нет первого */
-	color: #444  /* цвет */
+}
+
+.page {   /* Паге  */
+	min-height: 10%;
+	padding-bottom: 5px;
+	box-sizing: border-box;
+	max-width: 20000px;
+	margin: 0px auto 0px auto;
+	padding-left: 20%;
+	padding-top: 10px;
+	background: #fff url(https://klike.net/uploads/posts/2020-09/1599896394_3.jpg) no-repeat;
+	background-attachment: fixed;
+	background-position: 50% 100%;
+}
+
+.wrapper {  /* Боди  */
+	padding-top: 10px;
+	padding-bottom: 0px;
+	height: 100%;
+	max-width: 2400px;
+	margin: 10px auto 50px auto;
+	background: #fff url(https://walpix.net/image.php?id=12511&width=1920&height=1080&crop=crop) no-repeat center;
+}
+
+.footer {  /* Всегда внизу  */
+	height: 90px;
+	margin-top: -90px;
+	box-sizing: border-box;
 }
 
 ul.ccs_main_menu {
