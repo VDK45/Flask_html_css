@@ -46,7 +46,11 @@
 
     <div id="reg_form" >                                 <!-- id уникальный идентификатор для css -->
     <h2><i>Go к нам!</i></h2>
-     <form action='register' method='post'>
+
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class='flash {{cat}}'>{{msg}}</div>
+    {% endfor %}
+     <form action='/register' method='post'>
      <input type='hidden' name='id' value='123456'>
 
      <table>                                             <!-- <table  border=5> Рамка = 5px -->

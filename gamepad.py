@@ -2,6 +2,7 @@
 from flask import *
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'wtf.omg,ggg-vdk45'
 
 
 @app.route('/')
@@ -28,8 +29,17 @@ def frame():
 
 @app.route('/register', methods=["POST", "GET"])
 def register():
+
     if request.method == "POST":
+        if len(request.form['fio']) > 4 and len(request.form['pass']) > 4 and request.form['agree'] == 'on':   #  Если нет agree будет ошибка
+            flash('Сообщение отправлено', category='success')
+        else:
+            flash('Ошибка отправки', category='error')
+        if request.form['fio'] == 'VDK45':
+            print("Hello VDK45")
         print(request.form)
+        # print(type(request.form['agree']))
+
     return render_template('gamepad_home.html', title='Registered')
 
 

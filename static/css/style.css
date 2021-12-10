@@ -126,6 +126,19 @@ textarea:focus {          /* к тегу textarea  */
 	min-width: 100px
 }
 
+.flash {padding: 10px;}
+.flash.success {
+	border: 1px solid #21DB56;
+	background: #AEFFC5;
+	border-radius: 13px;
+}
+
+.flash.error {
+	border: 1px solid #FF4343;
+	background: #FF9C9C;
+	border-radius: 13px;
+}
+
 .css_input {   /* Нужно поменять на  css_input */
 	width: 230px;
 	border: none;  /* border: none;  */
