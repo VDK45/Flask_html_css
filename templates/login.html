@@ -1,0 +1,14 @@
+{% extends 'gamepad_base.html' %}
+{% block title %}
+    {{  super() }}
+{% endblock title -%}
+{% block content %}
+{{  super() }}
+<form action="/login" method="POST" class="form-contact">
+<p><label>Имя: </label> <input type="text" name="username" value="" requied />
+<p><label>Пароль: </label> <input type="password" name="pass" value="" requied />
+<p><input type='submit' value='Войти' />
+</form>
+
+
+{% endblock content %}

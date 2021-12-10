@@ -1,4 +1,4 @@
-# from flask import Flask, render_template, url_for, request
+# from flask import Flask, render_template, url_for, request, flask, session, redirect
 from flask import *
 
 app = Flask(__name__)
@@ -41,6 +41,30 @@ def register():
         # print(type(request.form['agree']))
 
     return render_template('gamepad_home.html', title='Registered')
+
+
+@app.errorhandler(404)
+def pageNotFound(error):
+    return render_template('page404.html', title="Страница не найдена"), 404
+
+
+#  Профиль пользователя
+@app.route("/profile/<username>")
+def profile(username):
+    if 'userLongged' not in session or session['userLongged'] != username:  # Проверка сессии
+        abort(401)
+    return f"Профиль пользователя: {username}"
+
+
+#  Авторизация
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    if "userLongged" in session:
+        return redirect(url_for('profile', username=session['userLongged']))
+    elif request.method == 'POST' and request.form['username'] == 'VDK45' and request.form['pass'] == '45':
+        session['userLongged'] = request.form['username']
+        return redirect(url_for('profile', username=session['userLongged']))
+    return render_template('login.html', title='Авторизация')
 
 
 if __name__ == '__main__':
