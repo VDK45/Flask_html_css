@@ -3,45 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Controller Test</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="{{url_for('static', filename='js/controller.js')}}" ></script>
 </head>
 <body>
     <h1>Controller VDK45
     </h1>
 
 
-    <form action='/controller' method='post'>
-    <input type='hidden' name='id' value='123456'>
+    <!-- <form action='/controller' method='post'>
+    <input type='hidden' name='id' value='123456'> -->
 
     <tr>
-    <button  name='up'  value='up'><img src="{{url_for('static', filename='images/square.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Up' heith = '50' width = '50' hspace = '0' vspace = '0'>UP</button>
+    <button id="b_up" name='up'  value=''><img src="{{url_for('static', filename='images/square.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Up' heith = '50' width = '50' hspace = '0' vspace = '0'>UP</button>
     <br>
-    <button name='left'  value='left'><img src="{{url_for('static', filename='images/square.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'LEFT' heith = '50' width = '50' hspace = '0' vspace = '0'>LEFT</button>
-    <button name='right'  value='right'><img src="{{url_for('static', filename='images/square.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'RIGHT' heith = '50' width = '50' hspace = '0' vspace = '0'>RIGHT</button>
-    <button name='pause'  value='pause'><img src="{{url_for('static', filename='images/circle_button.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Pause' heith = '50' width = '50' hspace = '0' vspace = '0'>Кнопка p </button>
-    <button name='shoot'  value='shoot'><img src="{{url_for('static', filename='images/сircle.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'B' heith = '50' width = '50' hspace = '0' vspace = '0'>Кнопка B </button>
+    <button id="b_left" name='left'  value=''><img src="{{url_for('static', filename='images/square.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'LEFT' heith = '50' width = '50' hspace = '0' vspace = '0'>LEFT</button>
+    <button id="b_right" name='right'  value=''><img src="{{url_for('static', filename='images/square.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'RIGHT' heith = '50' width = '50' hspace = '0' vspace = '0'>RIGHT</button>
+    <button id="b_pause" name='pause'  value=''><img src="{{url_for('static', filename='images/circle_button.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Pause' heith = '50' width = '50' hspace = '0' vspace = '0'>Кнопка p </button>
+    <button id="b_shoot" name='shoot'  value=''><img src="{{url_for('static', filename='images/сircle.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'B' heith = '50' width = '50' hspace = '0' vspace = '0'>Кнопка B </button>
     <br>
-    <button name='down'  value='down'><img src="{{url_for('static', filename='images/square.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Down' heith = '50' width = '50' hspace = '0' vspace = '0'>DOWN</button>
-    <button name='space'  value='space'><img src="{{url_for('static', filename='images/сircle.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Spaces' heith = '50' width = '50' hspace = '30' vspace = '0'>Кнопка Space</button>
+    <button id="b_down" name='down'  value=''><img src="{{url_for('static', filename='images/square.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Down' heith = '50' width = '50' hspace = '0' vspace = '0'>DOWN</button>
+    <button id="b_space" name='space'  value='space'><img src="{{url_for('static', filename='images/сircle.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Spaces' heith = '50' width = '50' hspace = '30' vspace = '0'>Кнопка Space</button>
 
+    <td ><input id="none" type='hidden' type='text' name='none' value='0'></td>
 
-    <td ><input type='hidden' type='text' name='space' value=''></td>
-    <td ><input type='hidden' type='text' name='shoot' value=''></td>
-    <td ><input type='hidden' type='text' name='pause' value=''></td>
-    <td ><input type='hidden' type='text' name='up' value=''></td>
-    <td ><input type='hidden' type='text' name='down' value=''></td>
-    <td ><input type='hidden' type='text' name='left' value=''></td>
-    <td ><input type='hidden' type='text' name='right' value=''></td>
+    <td ><input id="space" type='hidden' type='text' name='space' value=''></td>
+    <td ><input id="shoot" type='hidden' type='text' name='shoot' value=''></td>
+    <td ><input id="pause" type='hidden' type='text' name='pause' value=''></td>
+    <td ><input id="up" type='hidden' type='text' name='up' value=''></td>
+    <td ><input id="down" type='hidden' type='text' name='down' value=''></td>
+    <td ><input id="left" type='hidden' type='text' name='left' value=''></td>
+    <td ><input id="right" type='hidden' type='text' name='right' value=''></td>
     </tr>
 
-    <tr><td><input type='hidden' type='submit' value='Space'></td></tr>
-    <tr><td><input type='hidden' type='submit' value='Shoot'></td></tr>
-    <tr><td><input type='hidden' type='submit' value='Pause'></td></tr>
-    <tr><td><input type='hidden' type='submit' value='Up'></td></tr>
-    <tr><td><input type='hidden' type='submit' value='Down'></td></tr>
-    <tr><td><input type='hidden' type='submit' value='Left'></td></tr>
-    <tr><td><input type='hidden' type='submit' value='Right'></td></tr>
+    <div id="message"></div>
+
     {% for cat, msg in get_flashed_messages(True) %}
     <div class='flash {{cat}}'>{{msg}}</div>
     {% endfor %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/controller.js')}}" ></script>
 </body>
 </html>

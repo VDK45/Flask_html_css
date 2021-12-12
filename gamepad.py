@@ -7,9 +7,11 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'wtf.omg,ggg-vdk45'
 
 ip = 'vdk45.ddns.net'
+htmlctrl = 'controller.html'
 
 
 def client_send(mes):
+    global htmlctrl
     global ip
     mes = mes.encode('utf-8')
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -20,13 +22,25 @@ def client_send(mes):
         print("Не удалось установить соединение.")
         print("Проверьте IP адрес!")
         sock.close()
-        ip_server()
+        try:
+            ip_server()
+        except NameError as err:
+            print("Не удалось установить соединение.")
+            print("Игра не запушена.")
+            htmlctrl = 'stream_offline.html'
     sock.close()
+
+
+@app.route('/stream_off')
+def pageOffline():
+    return render_template('stream_offline.html', title="Stream offline")
 
 
 @app.route('/')
 @app.route('/home')
 def home():
+    global htmlctrl
+    htmlctrl = 'controller.html'
     return render_template('gamepad_home.html', title='О')
 
 
@@ -89,33 +103,38 @@ def login():
 
 @app.route('/controller', methods=["POST", "GET"])
 def controller():
+    global htmlctrl
 
     if request.method == "POST":
-        if request.form['space'] == 'space':
+        # print(request.form)
+        # print(type(request.form))
+        # print(request.form['b_space'])
+
+        if request.form['b_space'] == '':
             client_send('!jump')
             flash('Отправлено jump', category='success')
-        elif request.form['shoot'] == 'shoot':
+        if request.form['b_shoot'] == '':
             client_send('!shoot')
             flash('Отправлено shoot', category='success')
-        elif request.form['pause'] == 'pause':
+        if request.form['b_pause'] == '':
             client_send('!pause')
             flash('Отправлено pause', category='success')
-        elif request.form['up'] == 'up':
+        if request.form['b_up'] == '':
             client_send('!up')
             flash('Отправлено up', category='success')
             sleep(0.3)
             client_send('#up')
-        elif request.form['down'] == 'down':
+        if request.form['b_down'] == '':
             client_send('!down')
             flash('Отправлено down', category='success')
             sleep(0.3)
             client_send('#down')
-        elif request.form['left'] == 'left':
+        if request.form['b_left'] == '':
             client_send('!left')
             flash('Отправлено left', category='success')
             sleep(0.3)
             client_send('#left')
-        elif request.form['right'] == 'right':
+        if request.form['b_right'] == '':
             client_send('!right')
             flash('Отправлено right', category='success')
             sleep(0.3)
@@ -123,10 +142,9 @@ def controller():
         else:
             flash('Ошибка отправки или игра не запушена', category='error')
 
-        print(request.form)
         # print(type(request.form['agree']))
 
-    return render_template('controller.html', title='Controller')
+    return render_template(htmlctrl, title='Controller')
 
 
 if __name__ == '__main__':
