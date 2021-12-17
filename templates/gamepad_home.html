@@ -5,12 +5,8 @@
 {% block content %}
 <div class="page" >
     <ul class="ccs_main_menu"  align="center" >
-    <li><a href='/gamepad#gamepad_vdk45'>Go to Gamepad VDK45</a>
+    <li><a href='/gamepad#gamepad_vdk45'>К Gamepad VDK45</a>
 
-    </ul>
-    <ul class="ccs_main_menu"  align="center" >
-
-    <li><a  href='/controller'>Go to Controller VDK45</a>
     </ul>
     {{  super() }}
 
@@ -31,15 +27,12 @@
      <li align = 'center' class="css_link" ><a href='mailto:vdk45blg@gmail.com'>Написать мне</a>
 
      <ul class = "reg_list">    <!-- class идентификатор для css -->
-     <style>
-        p:first-line {text-decoration: underline;}    <!-- Первая линия подчёркнутая -->
-     </style>
-     <p>Хочу создать игры для стрима и чтобы зрители играли прямо из браузера.
-     <br>Даже не знаю получится или нет но получилось <a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF' target='_blank'>VDK_controller.exe Для Windows 10 </a>
-     <br>Пока мало опыта но есть желание. Буду рад любой помощи!
-     <br>Владею <b>PYTHON, </b> <b>MYSQL</b>.
-     <br>Учусь <b>HTML</b> и <b>CSS</b>.
-     <br>Хочу научиться на <b>Андройд </b> разрабочика!
+
+     <p>Во время стрима вы можете играть в мини игры прямо в браузере используя <br> <b><a href='/gamepad#gamepad_vdk45'>Gamepad VDK45</a></b>
+     <br>Если вы используете телефон то желательно в вертикальном режиме
+     <br>Также вы можете скачать <br> <b> <a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF' target='_blank'>VDK_controller.exe Для Windows 10 </a></b>
+     <br>Играя на VDK_controller.exe вы можете прямо из клавиатуры в браузере нет
+
      </p>
     </ul>
     <!-- Пример:
@@ -52,9 +45,6 @@
     <div id="reg_form" >                                 <!-- id уникальный идентификатор для css -->
     <h2><i>Go к нам!</i></h2>
 
-    {% for cat, msg in get_flashed_messages(True) %}
-    <div class='flash {{cat}}'>{{msg}}</div>
-    {% endfor %}
      <form action='/register' method='post'>
      <input type='hidden' name='id' value='123456'>
 
@@ -91,13 +81,24 @@
      </tr>
 
      <tr><td colspan='2' class = "css_agree">  <!-- colspan='2' занимает 2 столбца -->
-        <p><input  type='checkbox' name='agree'> Регистрируясь, вы принимаете пользовательское соглашение</p>
+        <p><input  type='checkbox' name='agree' checked> Регистрируясь, вы принимаете пользовательское соглашение</p>
+
      </td></tr>
-     <tr><td><input class="css_button" type='submit' value='Зарегиться'></td><td><input class="css_button" type='reset' value='Отчистить форму'></td></tr>
+
+     <tr><td><input  class="css_button" type='submit' value='Зарегиться'></td><td><input class="css_button" type='reset' value='Отчистить форму'></td></tr>
 
      </table>
+     {% for cat_form, msg_form in get_flashed_messages(True) %}
+    <div class='flash {{cat_form}}'>{{msg_form}}</div>
+
+    {% endfor %}
      </form>
      </div>
      </div>
-
+    <br>
+    <br>Игры, VDK_controller.exe и сайт написаны на <b>PYTHON</b> + <b>HTML</b> и <b>CSS</b>.
+    <br>План  на будущее:
+    <br>Добавить анонимный чат
+    <br>Доделать регистрацию
+    <br>Хочу научиться на <b>Андройд </b> разрабочика!
 {% endblock content %}

@@ -3,7 +3,7 @@ $("#b_space").on("click", function() {
 	var none = $("#none").val().trim();
 	
 	if(space == "") { 
-		$("#message").text("space"); 
+		$("#message").text("Button space"); 
 		//return false;  // выход из функции
 	}
 	
@@ -50,7 +50,7 @@ $("#b_shoot").on("click", function() {
 	var none = $("#none").val().trim();
 	
 	if(shoot == "") {
-		$("#message").text("shoot");
+		$("#message").text("Button B");
 	}
 	
 	$.ajax({
@@ -144,7 +144,7 @@ $("#b_pause").on("click", function() {
 	var none = $("#none").val().trim();
 	
 	if(pause == "") {
-		$("#message").text("pause");
+		$("#message").text("Button pause");
 	}
 	
 	$.ajax({

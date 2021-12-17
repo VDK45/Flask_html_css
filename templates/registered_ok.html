@@ -1,0 +1,19 @@
+{% extends 'gamepad_base.html' %}
+{% block title %}
+    {{  super() }}
+{% endblock title -%}
+{% block content %}
+<div class="page" >
+    <ul class="ccs_main_menu"  align="center">
+    <li><a href='/gamepad#gamepad_vdk45'>Go to Gamepad VDK45</a>
+    </ul>
+    {{  super() }}
+    <style>
+    h1:first-letter {color:red;}
+    </style>
+    <h1 class="not_found" align="center"> Спасибо за  регистрацию! 
+	<br> <u><a href="/home" >Вернуться  на главную </a></u> </h1>
+</div>
+
+
+{% endblock content %}

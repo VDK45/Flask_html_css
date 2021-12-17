@@ -4,14 +4,12 @@ from flask import *
 from time import sleep
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'wtf.omg,ggg-vdk45'
+app.config['SECRET_KEY'] = 'wtf.omg,ggg-vdk45.58jgtd32gg<kl>'
 
-ip = 'vdk45.ddns.net'
-htmlctrl = 'controller.html'
+ip = 'vdk45.ddns.net'  # send to game
 
 
 def client_send(mes):
-    global htmlctrl
     global ip
     mes = mes.encode('utf-8')
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -27,7 +25,6 @@ def client_send(mes):
         except NameError as err:
             print("Не удалось установить соединение.")
             print("Игра не запушена.")
-            htmlctrl = 'stream_offline.html'
     sock.close()
 
 
@@ -39,8 +36,6 @@ def pageOffline():
 @app.route('/')
 @app.route('/home')
 def home():
-    global htmlctrl
-    htmlctrl = 'controller.html'
     return render_template('gamepad_home.html', title='О')
 
 
@@ -49,8 +44,7 @@ def game():
     return render_template('game.html', title='Game')
 
 
-
-@app.route('/gamepad')
+@app.route('/gamepad', methods=["POST", "GET"])
 def gamepad():
     return render_template('gamepad.html', title='Gamepad')
 
@@ -64,16 +58,23 @@ def frame():
 def register():
 
     if request.method == "POST":
-        if len(request.form['fio']) > 4 and len(request.form['pass']) > 4 and request.form['agree'] == 'on':   #  Если нет agree будет ошибка
-            flash('Сообщение отправлено', category='success')
-        else:
-            flash('Ошибка отправки', category='error')
-        if request.form['fio'] == 'VDK45':
-            print("Hello VDK45")
-        print(request.form)
-        # print(type(request.form['agree']))
+        print(request.form)  # delete
 
-    return render_template('gamepad_home.html', title='Registered')
+        if len(request.form['fio']) < 4:
+            flash('Ваш ник слишком короткий', category='error')
+            return render_template('gamepad_home.html', title='Registered')
+        elif len(request.form['pass']) < 4:
+            flash('Ваш пароль слишком легкий', category='error')
+            return render_template('gamepad_home.html', title='Registered')
+        elif len(request.form) == 6:
+            flash('Вы принимаете пользовательское соглашение?', category='error')
+            return render_template('gamepad_home.html', title='Registered')
+        else:
+            flash('Регистрация прошла успешно', category='success')
+            return render_template('registered_ok.html', title='Registered')
+    else:
+        return render_template('gamepad_home.html', title='Registered')
+    # return render_template('gamepad_home.html', title='Registered')
 
 
 # Страница не найдена
@@ -90,7 +91,7 @@ def profile(username):
     return f"Профиль пользователя: {username}"
 
 
-#  Авторизация
+#  Авторизация ----------------
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if "userLongged" in session:
@@ -103,52 +104,74 @@ def login():
 
 @app.route('/controller', methods=["POST", "GET"])
 def controller():
-    global htmlctrl
-
     if request.method == "POST":
-        # print(request.form)
-        # print(type(request.form))
-        # print(request.form['b_space'])
-
         if request.form['b_space'] == '':
             client_send('!jump')
-            flash('Отправлено jump', category='success')
+            sleep(0.3)
+            client_send('#jump')
         if request.form['b_shoot'] == '':
             client_send('!shoot')
-            flash('Отправлено shoot', category='success')
+            sleep(0.3)
+            client_send('#shoot')
         if request.form['b_pause'] == '':
             client_send('!pause')
-            flash('Отправлено pause', category='success')
+            sleep(0.3)
+            client_send('#pause')
         if request.form['b_up'] == '':
             client_send('!up')
-            flash('Отправлено up', category='success')
             sleep(0.3)
             client_send('#up')
         if request.form['b_down'] == '':
             client_send('!down')
-            flash('Отправлено down', category='success')
             sleep(0.3)
             client_send('#down')
         if request.form['b_left'] == '':
             client_send('!left')
-            flash('Отправлено left', category='success')
             sleep(0.3)
             client_send('#left')
         if request.form['b_right'] == '':
             client_send('!right')
-            flash('Отправлено right', category='success')
             sleep(0.3)
             client_send('#right')
         else:
-            flash('Ошибка отправки или игра не запушена', category='error')
+            flash('Ошибка отправки!', category='error')
+            flash('Возможно стрим закончился или игра не запушена', category='error')
+            return render_template('stream_offline.html', title='Stream offline')
+    return render_template('controller.html', title='minipad 1')
 
-        # print(type(request.form['agree']))
 
-    return render_template(htmlctrl, title='Controller')
+@app.route('/controller_2', methods=["POST", "GET"])
+def controller_2():
+    if request.method == "POST":
+        if request.form['b_space'] == '':
+            client_send('!jump')
+        if request.form['b_shoot'] == '':
+            client_send('!shoot')
+        if request.form['b_pause'] == '':
+            client_send('!pause')
+        if request.form['b_up'] == '':
+            client_send('!up')
+            sleep(0.3)
+            client_send('#up')
+        if request.form['b_down'] == '':
+            client_send('!down')
+            sleep(0.3)
+            client_send('#down')
+        if request.form['b_left'] == '':
+            client_send('!left')
+            sleep(0.3)
+            client_send('#left')
+        if request.form['b_right'] == '':
+            client_send('!right')
+            sleep(0.3)
+            client_send('#right')
+        else:
+            flash('Ошибка отправки!', category='error')
+            flash('Возможно стрим закончился или игра не запушена', category='error')
+            return render_template('stream_offline.html', title='Stream offline')
+    return render_template('controller_2.html', title='Minipad 2')
 
 
 if __name__ == '__main__':
     # app.run(debug=True)
     app.run(host='0.0.0.0', port=5000, debug=True)
-
-

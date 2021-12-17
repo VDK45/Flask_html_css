@@ -186,9 +186,10 @@ textarea:focus {          /* к тегу textarea  */
 	font-size: 16px;
 	color: 333;
 	padding: 4px;
+	padding-bottom: 5px;
 	border: 5px solid #FFCF11;
 	border-radius: 13px;     /* Округление */
-	margin: 15px auto 0px auto;
+	margin: 15px auto 15px auto;
 }
 
 
