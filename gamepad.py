@@ -44,9 +44,7 @@ def game():
     return render_template('game.html', title='Game')
 
 
-@app.route('/gamepad', methods=["POST", "GET"])
-def gamepad():
-    return render_template('gamepad.html', title='Gamepad')
+
 
 
 @app.route('/frame')
@@ -56,22 +54,21 @@ def frame():
 
 @app.route('/register', methods=["POST", "GET"])
 def register():
-
     if request.method == "POST":
         print(request.form)  # delete
 
         if len(request.form['fio']) < 4:
             flash('Ваш ник слишком короткий', category='error')
-            return render_template('gamepad_home.html', title='Registered')
+            return redirect(url_for('register'))
         elif len(request.form['pass']) < 4:
             flash('Ваш пароль слишком легкий', category='error')
-            return render_template('gamepad_home.html', title='Registered')
+            return redirect(url_for('register'))
         elif len(request.form) == 6:
             flash('Вы принимаете пользовательское соглашение?', category='error')
-            return render_template('gamepad_home.html', title='Registered')
+            return redirect(url_for('register'))
         else:
             flash('Регистрация прошла успешно', category='success')
-            return render_template('registered_ok.html', title='Registered')
+            return redirect(url_for('register'))
     else:
         return render_template('gamepad_home.html', title='Registered')
     # return render_template('gamepad_home.html', title='Registered')
@@ -102,8 +99,9 @@ def login():
     return render_template('login.html', title='Авторизация')
 
 
-@app.route('/controller', methods=["POST", "GET"])
-def controller():
+@app.route('/gamepad', methods=["POST", "GET"])
+def gamepad():
+
     if request.method == "POST":
         if request.form['b_space'] == '':
             client_send('!jump')
@@ -134,43 +132,58 @@ def controller():
             sleep(0.3)
             client_send('#right')
         else:
-            flash('Ошибка отправки!', category='error')
+            flash('Ошибка отправки gamepad 1!', category='error')
             flash('Возможно стрим закончился или игра не запушена', category='error')
-            return render_template('stream_offline.html', title='Stream offline')
-    return render_template('controller.html', title='minipad 1')
+            return redirect(url_for('gamepad'))
+            # return render_template('stream_offline.html', title='Stream offline')
+    return render_template('gamepad.html', title='Gamepad 1')
+
+@app.route('/controller', methods=["POST", "GET"])
+def controller():
+    return render_template('controller.html', title='Gamepad mini')
 
 
 @app.route('/controller_2', methods=["POST", "GET"])
 def controller_2():
     if request.method == "POST":
-        if request.form['b_space'] == '':
-            client_send('!jump')
-        if request.form['b_shoot'] == '':
-            client_send('!shoot')
-        if request.form['b_pause'] == '':
-            client_send('!pause')
-        if request.form['b_up'] == '':
-            client_send('!up')
+        if request.form['b_space2'] == '':
+            client_send('!!jump')
             sleep(0.3)
-            client_send('#up')
-        if request.form['b_down'] == '':
-            client_send('!down')
+            client_send('##jump')
+        if request.form['b_shoot2'] == '':
+            client_send('!!shoot')
             sleep(0.3)
-            client_send('#down')
-        if request.form['b_left'] == '':
-            client_send('!left')
+            client_send('##shoot')
+        if request.form['b_pause2'] == '':
+            client_send('!!pause')
             sleep(0.3)
-            client_send('#left')
-        if request.form['b_right'] == '':
-            client_send('!right')
+            client_send('##pause')
+        if request.form['b_up2'] == '':
+            client_send('!!up')
             sleep(0.3)
-            client_send('#right')
+            client_send('##up')
+        if request.form['b_down2'] == '':
+            client_send('!!down')
+            sleep(0.3)
+            client_send('##down')
+        if request.form['b_left2'] == '':
+            client_send('!!left')
+            sleep(0.3)
+            client_send('##left')
+        if request.form['b_right2'] == '':
+            client_send('!!right')
+            sleep(0.3)
+            client_send('##right')
         else:
-            flash('Ошибка отправки!', category='error')
+            flash('Ошибка отправки из gamepad 2!', category='error')
             flash('Возможно стрим закончился или игра не запушена', category='error')
-            return render_template('stream_offline.html', title='Stream offline')
+            return redirect(url_for('controller_2'))
+            # return render_template('stream_offline.html', title='Stream offline')
     return render_template('controller_2.html', title='Minipad 2')
 
+@app.route('/gamepad_2', methods=["POST", "GET"])
+def gamepad_2():
+    return render_template('gamepad_2.html', title='Gamepad 2')
 
 if __name__ == '__main__':
     # app.run(debug=True)

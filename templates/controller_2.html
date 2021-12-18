@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini gamepad 2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="{{url_for('static', filename='js/controller.js')}}" ></script>
+</head>
+<body>
+    <h1>Mini gamepad 2</h1>
+
+    <!-- <form action='/controller' method='post'>
+    <input type='hidden' name='id' value='123456'> -->
+
+    <tr>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="b_up2" name='up'  value=''><img src="{{url_for('static', filename='images/up.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Up' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '40' vspace = '0'></button>
+    <button id="b_pause2" name='pause'  value=''><img src="{{url_for('static', filename='images/circle_button.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Pause' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <br>
+    <button id="b_left2" name='left'  value=''><img src="{{url_for('static', filename='images/left.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'LEFT' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="b_right2" name='right'  value=''><img src="{{url_for('static', filename='images/right.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'RIGHT' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '40' vspace = '0'></button>
+    <button id="b_shoot2" name='shoot'  value=''><img src="{{url_for('static', filename='images/triangle.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'B' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <br>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="b_down2" name='down'  value=''><img src="{{url_for('static', filename='images/down.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Down' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '50' vspace = '0'></button>
+    <button id="b_space2" name='space'  value='space'><img src="{{url_for('static', filename='images/space.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Spaces' heith = '100' width = '100' hspace = '0' vspace = '0'></button>
+
+    <td ><input id="none2" type='hidden' type='text' name='none' value='0'></td>
+
+    <td ><input id="space2" type='hidden' type='text' name='space' value=''></td>
+    <td ><input id="shoot2" type='hidden' type='text' name='shoot' value=''></td>
+    <td ><input id="pause2" type='hidden' type='text' name='pause' value=''></td>
+    <td ><input id="up2" type='hidden' type='text' name='up' value=''></td>
+    <td ><input id="down2" type='hidden' type='text' name='down' value=''></td>
+    <td ><input id="left2" type='hidden' type='text' name='left' value=''></td>
+    <td ><input id="right2" type='hidden' type='text' name='right' value=''></td>
+    </tr>
+
+    <div id="message2"></div>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+      </ul>
+    {% endif %}
+    {% endwith %}
+<!--
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class='flash {{cat}}'>{{msg}}</div>
+    {% endfor %}
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/controller.js')}}" ></script>
+    <br>
+    <li>Вернуться к большому <b><a href='/gamepad_2#gamepad_2'> Gamepad 2</a></b>
+    <h2>Список игр для Mini gamepad 2</h2>
+    <li>TF2D за Хевика
+</body>
+</html>

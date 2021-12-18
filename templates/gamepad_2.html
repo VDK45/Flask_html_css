@@ -1,0 +1,142 @@
+{% extends 'gamepad_base.html' %}
+{% block title %}
+    {{  super() }}
+    <ul class="ccs_main_menu"  align="center">
+    <li><a href='/home'>О проекте</a>
+    </ul>
+
+{% endblock title -%}
+
+{% block content %}
+
+    {{  super() }}
+
+    <h1 align = 'center'><i>О Gamepad</i> <u><b>VDK</b></u><sup>45</sup> </h1>
+    <p align = 'center'> <b>Добро пожаловать!</b> </p>
+    <pre align = 'center'>
+─▄▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▄─
+█░░░█░░░░░░░░░░▄▄░██░█
+█░▀▀█▀▀░▄▀░▄▀░░▀▀░▄▄░█
+█░░░▀░░░▄▄▄▄▄░░██░▀▀░█
+─▀▄▄▄▄▄▀─────▀▄▄▄▄▄▄▀─
+    </pre>
+
+    <p align = 'center'>  Gamepad для моих мини игр на <b><a href='https://www.twitch.tv/vdk45'>TWITCH</a></b>
+    <br>Играть в мои мини игр во время стрима
+    <br>Используя <b><a href='/gamepad#gamepad_1'>Gamepad 1</a></b> прямо тут в баузере
+    <br>Или <b><a href='/controller_2#gamepad_2'>Gamepad 2</a></b> прямо тут в баузере
+    <br>Если вы используете телефон то желательно в вертикальном режиме
+    <br>Также вы можете скачать для Для Windows 10
+    <br> <b><a href='https://cloud.mail.ru/public/VX9G/PwVvRWGoF' target='_blank'>VDK_controller_1.exe Для Windows 10 </a></b>
+    <br> <b><a href='https://cloud.mail.ru/public/BSxe/cSzyQDTzp' target='_blank'>VDK_controller_2.exe Для Windows 10 </a></b>
+    <br>запустить и играть без установки.
+    </p>
+    <hr align = 'center' color='black' size=7 width='90%' Noshade>
+
+    <h2 id='gamepad_2'><i>Gamepad 2</i>  </h2>
+
+    
+<tr>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '35' vspace = '0'></button>
+    <button id="b_up2" name='up'  value=''><img src="{{url_for('static', filename='images/up.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Up' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '140' vspace = '0'></button>
+    <button id="b_pause2" name='pause'  value=''><img src="{{url_for('static', filename='images/circle_button.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Pause' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <br>
+	<button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="b_left2" name='left'  value=''><img src="{{url_for('static', filename='images/left.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'LEFT' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="b_right2" name='right'  value=''><img src="{{url_for('static', filename='images/right.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'RIGHT' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '140' vspace = '0'></button>
+    <button id="b_shoot2" name='shoot'  value=''><img src="{{url_for('static', filename='images/triangle.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'B' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <br>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '35' vspace = '0'></button>
+    <button id="b_down2" name='down'  value=''><img src="{{url_for('static', filename='images/down.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Down' heith = '50' width = '50' hspace = '0' vspace = '0'></button>
+    <button id="visible2" name='visible'  value=''><img src="{{url_for('static', filename='images/visible.png')}}" style="vertical-align: middle" alt = 'image not found' title = '' heith = '50' width = '50' hspace = '150' vspace = '0'></button>
+    <button id="b_space2" name='space'  value='space'><img src="{{url_for('static', filename='images/space.png')}}" style="vertical-align: middle" alt = 'image not found' title = 'Spaces' heith = '100' width = '100' hspace = '0' vspace = '0'></button>
+
+    <td ><input id="none2" type='hidden' type='text' name='none' value='0'></td>
+
+    <td ><input id="space2" type='hidden' type='text' name='space' value=''></td>
+    <td ><input id="shoot2" type='hidden' type='text' name='shoot' value=''></td>
+    <td ><input id="pause2" type='hidden' type='text' name='pause' value=''></td>
+    <td ><input id="up2" type='hidden' type='text' name='up' value=''></td>
+    <td ><input id="down2" type='hidden' type='text' name='down' value=''></td>
+    <td ><input id="left2" type='hidden' type='text' name='left' value=''></td>
+    <td ><input id="right2" type='hidden' type='text' name='right' value=''></td>
+    </tr>
+
+    <div id="message2"></div>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+      </ul>
+    {% endif %}
+    {% endwith %}
+
+	
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/controller.js')}}" ></script>
+    <br>
+    <li>Держите телефон горизонтально для правильного отображения кнопок!
+    <li>Переключите телефон в альбомный режим для более комфортной игры!
+    <li>Перейти к меньшему <b><a href='/controller_2'>Mini Gamepad 2 </a></b>если кнопки не вместились на экране.
+    <li>Желаем приятной игры!
+    <h3>Кнопки:</h3>
+
+    <ul type='square'>
+        <li>Управление движения:
+        <ul>
+        <li><u>Button</u> W = UP
+        <li><u>Button</u> S = DOWN
+        <li><u>Button</u> A = LEFT
+        <li><u>Button</u> D = RIGHT
+        </ul>
+    </ul>
+    <ul type='circle' >
+        <li>Управление действии:
+        <ul>
+        <li><u>Button</u > <img src="{{url_for('static', filename='images/space.png')}}" alt = 'image not found'
+            title = 'Spaces-Button' heith = '20' width = '20' hspace = '0' vspace = '0'> SHOOT
+        <li><u>Button</u> <img src="{{url_for('static', filename='images/triangle.png')}}" alt = 'image not found'
+            title = 'B-Button' heith = '20' width = '20' hspace = '0' vspace = '0'> Rocket
+        <li><u>Button</u> <img src="{{url_for('static', filename='images/circle_button.png')}}" alt = 'image not found'
+            title = 'N-Button' heith = '20' width = '20' hspace = '0' vspace = '0'> PAUSE
+
+        </ul>
+    </ul>
+
+    <h4>Управления через чат на TWITCH:</h4>
+    <p><u>Работает не на всех играх</u></p>
+    <ol>
+        <li>UP = !up
+        <li>DOWN = !down
+        <li>LEFT = !left
+        <li>RIGHT = !right
+    </ol>
+    <ol start=5>
+        <li><u><sup>Button</sup></u > <img src="{{url_for('static', filename='images/space.png')}}" alt = 'image not found'
+            title = 'Spaces-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = !spaces</sup>
+        <li><u><sup>Button</sup></u> <img src="{{url_for('static', filename='images/triangle.png')}}" alt = 'image not found'
+            title = 'B-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = !b</sup>
+        <li><u><sup>Button</sup></u> <img src="{{url_for('static', filename='images/circle_button.png')}}" alt = 'image not found'
+            title = 'N-Button' heith = '20' width = '20' hspace = '0' vspace = '0'><sup> = !p</sup>
+
+    </ol>
+    <pre>
+    ─▄▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▄─
+    █░░░█░░░░░░░░░░▄▄░██░█
+    █░▀▀█▀▀░▄▀░▄▀░░▀▀░▄▄░█
+    █░░░▀░░░▄▄▄▄▄░░██░▀▀░█
+    ─▀▄▄▄▄▄▀─────▀▄▄▄▄▄▄▀─
+    </pre>
+    <li><a href='/home#reg_form'>К регистрации</a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/controller.js')}}" ></script>
+{% endblock content %}
+
