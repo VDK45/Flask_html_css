@@ -2,6 +2,7 @@
 import socket
 from flask import *
 from time import sleep
+import pyautogui as key
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'wtf.omg,ggg-vdk45.58jgtd32gg<kl>'
@@ -184,6 +185,47 @@ def controller_2():
 @app.route('/gamepad_2', methods=["POST", "GET"])
 def gamepad_2():
     return render_template('gamepad_2.html', title='Gamepad 2')
+
+
+@app.route('/pc_gamepad', methods=["POST", "GET"])
+def pc_gamepad():
+
+    if request.method == "POST":
+        print(request.form)
+        if request.form['b_space0'] == '':
+            key.keyDown('space')
+            sleep(0.5)
+            key.keyUp('space')
+        if request.form['b_shoot0'] == '':
+            key.keyDown('e')
+            sleep(0.5)
+            key.keyUp('e')
+        if request.form['b_pause0'] == '':
+            key.press('g')
+            key.press('g')
+        if request.form['b_up0'] == '':
+            key.keyDown('w')
+            sleep(0.5)
+            key.keyUp('w')
+        if request.form['b_down0'] == '':
+            key.keyDown('s')
+            sleep(0.5)
+            key.keyUp('s')
+        if request.form['b_left0'] == '':
+            key.keyDown('a')
+            sleep(0.5)
+            key.keyUp('a')
+        if request.form['b_right0'] == '':
+            key.keyDown('d')
+            sleep(0.5)
+            key.keyUp('d')
+        else:
+            flash('Ошибка отправки pc_gamepad!', category='error')
+            flash('Возможно стрим закончился или игра не запушена', category='error')
+            return redirect(url_for('pc_gamepad'))
+            # return render_template('stream_offline.html', title='Stream offline')
+    return render_template('pc_gamepad.html', title='PC_Gamepad')
+
 
 if __name__ == '__main__':
     # app.run(debug=True)
